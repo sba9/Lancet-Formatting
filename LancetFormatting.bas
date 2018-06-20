@@ -3,12 +3,12 @@ Option Explicit
 'Sam Albertson, 5/25/2018, updated 6/20/2018'
 
 Sub LancetFormatting()
-Call UncertaintyFlagMacro
 Call Macro0
 Call Macro1
 Call DecimalMacro
 Call EnDashMacro
 Call EmDashMacro
+Call UncertaintyFlagMacro
 End Sub
 'Swaps American English words with their British English Counterparts.'
 'Covers the first 1000 words in the dictionary.'
@@ -3596,7 +3596,7 @@ Sub EmDashMacro()
 Selection.Find.ClearFormatting
 Selection.Find.Replacement.ClearFormatting
 With Selection.Find
-.Text = "-"
+.Text = "-[!0-9]@"
 .Replacement.Text = "—"
 .Forward = True
 .Wrap = wdFindContinue
@@ -3607,6 +3607,7 @@ With Selection.Find
 .MatchSoundsLike = False
 .MatchAllWordForms = False
 End With
+Options.DefaultHighlightColorIndex = wdYellow
 Selection.Find.Replacement.Highlight = True
 Selection.Find.Execute Replace:=wdReplaceAll
 
