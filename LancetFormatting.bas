@@ -1,7 +1,6 @@
 Attribute VB_Name = "NewMacros1"
 Option Explicit
-'Sam Albertson, 5/25/2018, updated 6/20/2018'
-
+'Sam Albertson, 2018-05-25, updated 2018-06-21
 Sub LancetFormatting()
 Call Macro0
 Call Macro1
@@ -2028,14 +2027,13 @@ Sub Macro0()
             .MatchSoundsLike = False
             .MatchAllWordForms = False
        End With
-       Options.DefaultHighlightColorIndex = wdYellow
        Selection.Find.Replacement.Highlight = True
        Selection.Find.Execute Replace:=wdReplaceAll
    Next i
 End Sub
 
 Sub Macro1()
-    Dim swapWords(745, 2) As String
+    Dim swapWords(771, 2) As String
     swapWords(1, 1) = "mobilisation"
     swapWords(1, 2) = "mobilization"
     swapWords(2, 1) = "mobilise"
@@ -3524,8 +3522,60 @@ Sub Macro1()
     swapWords(743, 2) = "i.e."
     swapWords(744, 1) = "eg"
     swapWords(744, 2) = "e.g."
+    swapWords(745, 1) = "among"
+    swapWords(745, 2) = "amongst"
+    swapWords(746, 1) = "chlamydial infection"
+    swapWords(746, 2) = "chlamydia"
+    swapWords(747, 1) = "conflict and terrorism"
+    swapWords(747, 2) = "military operations and terrorism"
+    swapWords(748, 1) = "crosswalk"
+    swapWords(748, 2) = "cross-walk"
+    swapWords(749, 1) = "crosswalking"
+    swapWords(749, 2) = "cross-walking"
+    swapWords(750, 1) = "crosswalks"
+    swapWords(750, 2) = "cross-walks"
+    swapWords(751, 1) = "crosswalked"
+    swapWords(751, 2) = "cross-walked"
+    swapWords(752, 1) = "decision-maker"
+    swapWords(752, 2) = "decision maker"
+    swapWords(753, 1) = "decision-making"
+    swapWords(753, 2) = "decision making"
+    swapWords(754, 1) = "decision-maker"
+    swapWords(754, 2) = "decisionmaker"
+    swapWords(755, 1) = "decision-making"
+    swapWords(755, 2) = "decisionmaking"
+    swapWords(756, 1) = "executions and police conflict"
+    swapWords(756, 2) = "legal intervention"
+    swapWords(757, 1) = "gonococcal infection"
+    swapWords(757, 2) = "gonorrhea"
+    swapWords(758, 1) = "gonococcal infection"
+    swapWords(758, 2) = "gonorrhoea"
+    swapWords(759, 1) = "HIV"
+    swapWords(759, 2) = "HIV virus"
+    swapWords(760, 1) = "lifespan"
+    swapWords(760, 2) = "life span"
+    swapWords(761, 1) = "policymaker"
+    swapWords(761, 2) = "policy-maker"
+    swapWords(762, 1) = "policymaking"
+    swapWords(762, 2) = "policy-making"
+    swapWords(763, 1) = "policymaker"
+    swapWords(763, 2) = "policy maker"
+    swapWords(764, 1) = "policymaking"
+    swapWords(764, 2) = "policy making"
+    swapWords(765, 1) = "super-region"
+    swapWords(765, 2) = "superregion"
+    swapWords(766, 1) = "super-region"
+    swapWords(766, 2) = "super region"
+    swapWords(767, 1) = "super-regions"
+    swapWords(767, 2) = "superregions"
+    swapWords(768, 1) = "super-regions"
+    swapWords(768, 2) = "super regions"
+    swapWords(769, 1) = "Taiwan (Province of China)"
+    swapWords(769, 2) = "Taiwan"
+    swapWords(770, 1) = "while"
+    swapWords(770, 2) = "whilst"
     Dim i As Integer
-    For i = 1 To 745
+    For i = 1 To 771
           Selection.Find.ClearFormatting
           Selection.Find.Replacement.ClearFormatting
             With Selection.Find
@@ -3540,13 +3590,12 @@ Sub Macro1()
             .MatchSoundsLike = False
             .MatchAllWordForms = False
        End With
-       Options.DefaultHighlightColorIndex = wdYellow
        Selection.Find.Replacement.Highlight = True
        Selection.Find.Execute Replace:=wdReplaceAll
    Next i
 End Sub
 
-
+'Swaps out decimal points for floating decimals.'
 Sub DecimalMacro()
 
 Selection.Find.ClearFormatting
@@ -3569,6 +3618,7 @@ Selection.Find.Execute Replace:=wdReplaceAll
 
 End Sub
 
+'Swaps out hyphens for en-dashes in year ranges.'
 Sub EnDashMacro()
 
 Selection.Find.ClearFormatting
@@ -3591,6 +3641,7 @@ Selection.Find.Execute Replace:=wdReplaceAll
 
 End Sub
 
+'Swaps out hyphens for em-dashes when not attached to negative numbers or year ranges.'
 Sub EmDashMacro()
 
 Selection.Find.ClearFormatting
@@ -3613,6 +3664,7 @@ Selection.Find.Execute Replace:=wdReplaceAll
 
 End Sub
 
+'Highlights uncertainty intervals that straddle zero'
 Sub UncertaintyFlagMacro()
 
 Selection.Find.ClearFormatting
