@@ -2027,6 +2027,7 @@ Sub Macro0()
             .MatchSoundsLike = False
             .MatchAllWordForms = False
        End With
+       Options.DefaultHighlightColorIndex = wdYellow
        Selection.Find.Replacement.Highlight = True
        Selection.Find.Execute Replace:=wdReplaceAll
    Next i
@@ -3590,6 +3591,7 @@ Sub Macro1()
             .MatchSoundsLike = False
             .MatchAllWordForms = False
        End With
+       Options.DefaultHighlightColorIndex = wdYellow
        Selection.Find.Replacement.Highlight = True
        Selection.Find.Execute Replace:=wdReplaceAll
    Next i
@@ -3647,8 +3649,8 @@ Sub EmDashMacro()
 Selection.Find.ClearFormatting
 Selection.Find.Replacement.ClearFormatting
 With Selection.Find
-.Text = "-[!0-9]@"
-.Replacement.Text = "—"
+.Text = "-([!0-9]@)"
+.Replacement.Text = "—\1"
 .Forward = True
 .Wrap = wdFindContinue
 .Format = False
