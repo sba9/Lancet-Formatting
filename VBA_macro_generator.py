@@ -62,7 +62,7 @@ for i in range(0,len(start_indices)):
     output.append("            .MatchSoundsLike = False\n")
     output.append("            .MatchAllWordForms = False\n")
     output.append("       End With\n")
-    output.append("       Options.DefaultHighlightColorIndex = wdYellow\n")
+    output.append("       Options.DefaultHighlightColorIndex = wdDarkYellow\n")
     output.append("       Selection.Find.replacement.Highlight = True\n")
     output.append("       Selection.Find.Execute Replace:=wdReplaceAll\n")
     output.append("   Next i\n")
@@ -87,7 +87,7 @@ With Selection.Find
 .MatchSoundsLike = False
 .MatchAllWordForms = False
 End With
-Options.DefaultHighlightColorIndex = wdYellow
+Options.DefaultHighlightColorIndex = wdDarkYellow
 Selection.Find.Replacement.Highlight = True
 Selection.Find.Execute Replace:=wdReplaceAll
 
@@ -110,7 +110,7 @@ With Selection.Find
 .MatchSoundsLike = False
 .MatchAllWordForms = False
 End With
-Options.DefaultHighlightColorIndex = wdYellow
+Options.DefaultHighlightColorIndex = wdDarkYellow
 Selection.Find.Replacement.Highlight = True
 Selection.Find.Execute Replace:=wdReplaceAll
 
@@ -123,7 +123,7 @@ Selection.Find.ClearFormatting
 Selection.Find.Replacement.ClearFormatting
 With Selection.Find
 .Text = "-([!0-9]@)"
-.Replacement.Text = "—\1"
+.Replacement.Text = "—\\1"
 .Forward = True
 .Wrap = wdFindContinue
 .Format = False
@@ -133,7 +133,7 @@ With Selection.Find
 .MatchSoundsLike = False
 .MatchAllWordForms = False
 End With
-Options.DefaultHighlightColorIndex = wdYellow
+Options.DefaultHighlightColorIndex = wdDarkYellow
 Selection.Find.Replacement.Highlight = True
 Selection.Find.Execute Replace:=wdReplaceAll
 

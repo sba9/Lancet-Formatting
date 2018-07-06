@@ -1,6 +1,6 @@
 Attribute VB_Name = "NewMacros1"
 Option Explicit
-'Sam Albertson, 2018-05-25, updated 2018-06-21
+'Sam Albertson, 2018-05-25, updated 2018-07-06
 Sub LancetFormatting()
 Call Macro0
 Call Macro1
@@ -2027,14 +2027,14 @@ Sub Macro0()
             .MatchSoundsLike = False
             .MatchAllWordForms = False
        End With
-       Options.DefaultHighlightColorIndex = wdYellow
+       Options.DefaultHighlightColorIndex = wdDarkYellow
        Selection.Find.Replacement.Highlight = True
        Selection.Find.Execute Replace:=wdReplaceAll
    Next i
 End Sub
 
 Sub Macro1()
-    Dim swapWords(771, 2) As String
+    Dim swapWords(770, 2) As String
     swapWords(1, 1) = "mobilisation"
     swapWords(1, 2) = "mobilization"
     swapWords(2, 1) = "mobilise"
@@ -3571,12 +3571,10 @@ Sub Macro1()
     swapWords(767, 2) = "superregions"
     swapWords(768, 1) = "super-regions"
     swapWords(768, 2) = "super regions"
-    swapWords(769, 1) = "Taiwan (Province of China)"
-    swapWords(769, 2) = "Taiwan"
-    swapWords(770, 1) = "while"
-    swapWords(770, 2) = "whilst"
+    swapWords(769, 1) = "while"
+    swapWords(769, 2) = "whilst"
     Dim i As Integer
-    For i = 1 To 771
+    For i = 1 To 770
           Selection.Find.ClearFormatting
           Selection.Find.Replacement.ClearFormatting
             With Selection.Find
@@ -3591,7 +3589,7 @@ Sub Macro1()
             .MatchSoundsLike = False
             .MatchAllWordForms = False
        End With
-       Options.DefaultHighlightColorIndex = wdYellow
+       Options.DefaultHighlightColorIndex = wdDarkYellow
        Selection.Find.Replacement.Highlight = True
        Selection.Find.Execute Replace:=wdReplaceAll
    Next i
@@ -3614,7 +3612,7 @@ With Selection.Find
 .MatchSoundsLike = False
 .MatchAllWordForms = False
 End With
-Options.DefaultHighlightColorIndex = wdYellow
+Options.DefaultHighlightColorIndex = wdDarkYellow
 Selection.Find.Replacement.Highlight = True
 Selection.Find.Execute Replace:=wdReplaceAll
 
@@ -3637,7 +3635,7 @@ With Selection.Find
 .MatchSoundsLike = False
 .MatchAllWordForms = False
 End With
-Options.DefaultHighlightColorIndex = wdYellow
+Options.DefaultHighlightColorIndex = wdDarkYellow
 Selection.Find.Replacement.Highlight = True
 Selection.Find.Execute Replace:=wdReplaceAll
 
@@ -3660,7 +3658,7 @@ With Selection.Find
 .MatchSoundsLike = False
 .MatchAllWordForms = False
 End With
-Options.DefaultHighlightColorIndex = wdYellow
+Options.DefaultHighlightColorIndex = wdDarkYellow
 Selection.Find.Replacement.Highlight = True
 Selection.Find.Execute Replace:=wdReplaceAll
 
