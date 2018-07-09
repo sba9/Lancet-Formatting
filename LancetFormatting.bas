@@ -3624,7 +3624,7 @@ Sub EnDashMacro()
 Selection.Find.ClearFormatting
 Selection.Find.Replacement.ClearFormatting
 With Selection.Find
-.Text = "<([12][019][0-9]{2})-([12][019][0-9]{2})>"
+.Text = "<([0-9]@)-([0-9]@)>"
 .Replacement.Text = "\1–\2"
 .Forward = True
 .Wrap = wdFindContinue
